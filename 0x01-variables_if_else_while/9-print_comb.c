@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 /**
  * main - Entry point
  *
@@ -23,8 +24,6 @@ int i, j;
 }
 }
 }
-
-	putchar('\n');
 
 	return (0);
 }
