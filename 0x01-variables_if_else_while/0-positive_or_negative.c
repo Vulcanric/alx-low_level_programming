@@ -3,6 +3,12 @@
 /* more headers goes there */
 #include <stdio.h>
 /* betty style doc for function main goes there */
+/**
+ * main - assigns a random number and prints if the number is "positive",
+ * "zero", or "negative"
+ *
+ * Return: 0
+ */
 int main(void)
 {
 	int n;
