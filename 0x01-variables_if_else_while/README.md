@@ -3,7 +3,7 @@
 ### Tasks
 ##### 1. Positive anything is better than negative nothing
 This program will assign a random number to the variable n each time it is executed. It should print whether the number stored in the variable `n` is positive or negative
-- file: `0-positive_or_negative.c`
+- file: [`0-positive_or_negative.c`](https://github.com/Vulcanric/alx-low_level_programming/blob/master/0x01-variables_if_else_while/0-positive_or_negative.c)
 - The variable `n` will store a different value every time you will run this program
 - The output of the program is:
 	- The number, followed by
