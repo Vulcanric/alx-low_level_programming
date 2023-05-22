@@ -33,7 +33,7 @@ int main(void)
 			  */
 			while (n3 < 10)
 			{
-				putchar(n1 + 48);
+				putchar(n1 + 48); /* 48 is ascii decimal value for the character '0' */
 				putchar(n2 + 48);
 				putchar(n3 + 48);
 				if (n1 == 7 && n2 == 8 && n3 == 9) /* IF first-num, second-num and third-num are = 789 respectively */
