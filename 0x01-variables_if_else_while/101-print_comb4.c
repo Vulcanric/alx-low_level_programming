@@ -23,7 +23,7 @@ int main(void)
 				putchar(n1);
 				putchar(n2);
 				putchar(n3);
-				if (n1 == 7 && n2 == 8 && n3 == 9)
+				if (n1 == 55 && n2 == 56 && n3 == 57)
 					n1++; /* THEN increment first-num */
 				else
 				{
