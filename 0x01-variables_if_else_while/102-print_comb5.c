@@ -17,11 +17,11 @@ int main(void)
 			{
 				for (n4 = 48; n4 < 58; n4++)
 				{
-						putchar(n1);
-						putchar(n2);
-						putchar(' ');
-						putchar(n3);
-						putchar(n4);
+					putchar(n1);
+					putchar(n2);
+					putchar(' ');
+					putchar(n3);
+					putchar(n4);
 					if (!(n1 == 57 && n2 == 57 && n3 == 57 && n4 == 57))
 					{
 						putchar(',');
