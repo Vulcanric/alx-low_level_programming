@@ -52,7 +52,7 @@ This program prints all single digit numbers of base 10 starting from `0`, follo
 
 ##### 7. Numberz
 This program prints all base 10 single digit number starting with `0` and a newline
-- file: (`6-print_numberz.c`)[https://github.com/Vulcanric/alx-low_level_programming/blob/master/0x01-variables_if_else_while/4-print_alphabt.c]
+- file: [`6-print_numberz.c`](https://github.com/Vulcanric/alx-low_level_programming/blob/master/0x01-variables_if_else_while/4-print_alphabt.c)
 - Variable of type `char` is not used
 - Only the `putchar` function is used
 - All code is in the `main` function
