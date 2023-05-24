@@ -9,9 +9,13 @@
 int print_last_digit(int n)
 {
 	int absld, lastdigit = n % 10; /* This gives the last digit of any number */
+
 	if (lastdigit < 0)
 	{
-		absld = -lastdigit; /* Let the result be -(negative last-digit) which is = positive lastdigit */
+		absld = -lastdigit; /*
+				     * Let the result
+				     * be -(negative last-digit) which is = positive lastdigit
+				     */
 	}
 	else
 		absld = lastdigit;
