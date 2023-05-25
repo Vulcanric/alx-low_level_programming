@@ -14,7 +14,7 @@ void jack_bauer(void)
 	while (min_dg1 <= 50) /* WHILE it is less than or equal to 2 */
 	{
 		min_dg2 = 48; /* Initialize 2nd minute-digit to '0' */
-		while (min_dg2 <= 51)
+		while (min_dg2 <= 57)
 		{
 			secd1 = 48;
 			while (secd1 <= 53)
@@ -22,18 +22,23 @@ void jack_bauer(void)
 				secd2 = 48;
 				while (secd2 <= 57)
 				{
-					_putchar(min_dg1);
-					_putchar(min_dg2);
-					_putchar(':');
-					_putchar(secd1);
-					_putchar(secd2);
-					_putchar('\n');
-					secd2++;
+					if (min_dg1 >= 50 && min_dg2 >= 52 && secd1 >= 48 && secd2 >= 48)
+						min_dg1++;
+					else
+					{
+						_putchar(min_dg1);
+						_putchar(min_dg2);
+						_putchar(':');
+						_putchar(secd1);
+						_putchar(secd2);
+						_putchar('\n');
+						secd2++;
+					}
 				}
 				secd1++;
 			}
 			min_dg2++;
 		}
 		min_dg1++;
-	}
+	 }
 }
