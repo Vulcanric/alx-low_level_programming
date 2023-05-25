@@ -22,21 +22,18 @@ void jack_bauer(void)
 				secd2 = 48; /* Initialize 2nd seconds-digit to '0' */
 				while (secd2 <= 57) /* WHILE it is less than or equal to '9' */
 				{
-					if (min_dg1 >= 50 && min_dg2 >= 52 && secd1 >= 48 && secd2 >= 48) /*
-				* IF it is greater than or equal "24:00", it
-				* should stop
-				*/
-						break; /*... As this will not make any changes */
-					else
+					/* Stop just before "24:00"*/
+					if (min_dg1 >= 50 && min_dg2 >= 52 && secd1 >= 48 && secd2 >= 48)
 					{
-						_putchar(min_dg1);
-						_putchar(min_dg2);
-						_putchar(':');
-						_putchar(secd1);
-						_putchar(secd2);
-						_putchar('\n');
-						secd2++;
+						break;
 					}
+					_putchar(min_dg1);
+					_putchar(min_dg2);
+					_putchar(':');
+					_putchar(secd1);
+					_putchar(secd2);
+					_putchar('\n');
+					secd2++;
 				}
 				secd1++;
 			}
