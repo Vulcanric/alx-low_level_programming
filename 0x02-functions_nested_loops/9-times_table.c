@@ -7,7 +7,9 @@
  */
 void times_table(void)
 {
-	int result, i = 0, j;  /* Two variables to hold the numbers to be multiplied */
+	int result, i = 0, j;  /*
+				* Two variables to hold the numbers to be multiplied
+				*/
 
 	while (i < 10)
 	{
@@ -17,13 +19,18 @@ void times_table(void)
 			result = i * j;
 			printf("%d", result);
 			/* To make times table aligned */
-			if (result < 10 && !(j == 9))
+			if (((result + i) >= 10) && !(j == 9)) /*
+								* IF the next number in
+								* the row is a two-digit number
+								*/
 			{
-				printf(",  ");
+				printf(", "); /* Print ',' and ' ' */
 			}
-			else if (result >= 10 && !(j == 9))
+			else if (((result + i) < 10) && !(j == 9)) /*
+								* ELSE if it is a one-digit number
+								*/
 			{
-				printf(", ");
+				printf(",  "); /* Print ',' ' ' and ' '*/
 			}
 
 			j++;
