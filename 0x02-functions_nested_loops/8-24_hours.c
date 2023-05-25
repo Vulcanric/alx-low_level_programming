@@ -26,7 +26,7 @@ void jack_bauer(void)
 				* IF it is greater than or equal "24:00", it
 				* should stop
 				*/
-						min_dg1++; /*... As this will not make any changes */
+						break; /*... As this will not make any changes */
 					else
 					{
 						_putchar(min_dg1);
