@@ -11,19 +11,22 @@ void jack_bauer(void)
 	int min_dg1, min_dg2, secd1, secd2;
 
 	min_dg1 = 48; /* Initialize first minute-digit to '0' */
-	while (min_dg1 <= 50) /* WHILE it is less than or equal to 2 */
+	while (min_dg1 <= 50) /* WHILE it is less than or equal to '2' */
 	{
 		min_dg2 = 48; /* Initialize 2nd minute-digit to '0' */
-		while (min_dg2 <= 57)
+		while (min_dg2 <= 57) /* WHILE it is less than or equal to '9' */
 		{
-			secd1 = 48;
-			while (secd1 <= 53)
+			secd1 = 48; /* Initialize 1st seconds-digit to '0' */
+			while (secd1 <= 53) /* WHILE it less than or equal to '5' */
 			{
-				secd2 = 48;
-				while (secd2 <= 57)
+				secd2 = 48; /* Initialize 2nd seconds-digit to '0' */
+				while (secd2 <= 57) /* WHILE it is less than or equal to '9' */
 				{
-					if (min_dg1 >= 50 && min_dg2 >= 52 && secd1 >= 48 && secd2 >= 48)
-						min_dg1++;
+					if (min_dg1 >= 50 && min_dg2 >= 52 && secd1 >= 48 && secd2 >= 48) /*
+				* IF it is greater than or equal "24:00", it
+				* should stop
+				*/
+						min_dg1++; /*... As this will not make any changes */
 					else
 					{
 						_putchar(min_dg1);
@@ -40,5 +43,5 @@ void jack_bauer(void)
 			min_dg2++;
 		}
 		min_dg1++;
-	 }
+	}
 }
