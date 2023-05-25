@@ -31,7 +31,6 @@ void print_times_table(int n)
 				}
 			/*
 			 * ELSE IF the next result in row is a single-digit number
-			 * and the column is not the last column
 			 */
 				else if (((result + a) < 10) && (!(b == n)))
 				{
@@ -39,19 +38,15 @@ void print_times_table(int n)
 				}
 			/*
 			 * ELSE IF the next result in row is a three-digit number
-			 * and the column is not the last column
 			 */
 				else if (((result + a) > 99) && (!(b == n)))
 				{
 					printf(", ");
 				}
-
 				b++;
-
 			}
 			printf("\n");
 			a++;
 		}
-
 	}
 }
