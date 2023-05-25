@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -17,14 +16,19 @@ void times_table(void)
 		{
 			result = i * j;
 			printf("%d", result);
-			if (!(i >= 9))
+			/* To make times table aligned */
+			if (result < 10 && !(j == 9))
 			{
-				_putchar(',');
-				_putchar(' ');
+				printf(",  ");
 			}
+			else if (result >= 10 && !(j == 9))
+			{
+				printf(", ");
+			}
+
 			j++;
 		}
-		_putchar('\n');
+		printf("\n");
 		i++;
 	}
 }
