@@ -20,5 +20,5 @@ int main(void)
 		}
 	}
 	printf("%d\n", sum);
-	return (sum); /* sum.*/
+	return (0); /* Success....*/
 }
