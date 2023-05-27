@@ -8,17 +8,18 @@
 int main(void)
 {
 	int i = 1;
+
 	while (i <= 100)
 	{
-		if (i % 3 == 0 && i % 5 == 0) /* IF number is divisible by 3 and 5,no remainder */
+		if (i % 3 == 0 && i % 5 == 0) /* IF number is a multiple of 3 and 5 */
 		{
 			printf("FizzBuzz ");
 		}
-		else if (i % 3 == 0) /* ELSE IF the number is divisible by 3 only, no remainder */
+		else if (i % 3 == 0) /* ELSE IF the number is a multiple of 3 only */
 		{
 			printf("Fizz ");
 		}
-		else if (i % 5 == 0) /* ELSE IF the number is divisible by 5 only, no remainder */
+		else if (i % 5 == 0) /* ELSE IF the number is a multiple of 5 only */
 		{
 			printf("Buzz ");
 		}
