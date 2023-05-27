@@ -13,18 +13,19 @@ int main(void)
 	{
 		if (i % 3 == 0 && i % 5 == 0) /* IF number is a multiple of 3 and 5 */
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else if (i % 3 == 0) /* ELSE IF the number is a multiple of 3 only */
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		}
 		else if (i % 5 == 0) /* ELSE IF the number is a multiple of 5 only */
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else /* IF none of the above conditions are not met */
-			printf("%d ", i);
+			printf("%d", i);
+		printf(" ");
 		i++;
 	}
 	printf("\n");
