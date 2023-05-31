@@ -8,14 +8,14 @@
  */
 void puts_half(char *str)
 {
-	int n, len = 0; /* Length of the string(len) */
+	int n, m, len = 0; /* Length of the string(len) */
 
 	while (str[len] != '\0')
 	{
 		len++; /* this will give the length of the string */
 	}
 
-	if (len % 2 == 0)
+	if (len % 2 == 0) /* IF length of string is even */
 	{
 		n = (len) / 2; /* half of the string */
 		while (n < len)
@@ -24,13 +24,14 @@ void puts_half(char *str)
 			n++;
 		}
 	}
-	else
+	else /* ELSE if it is odd */
 	{
 		n = (len - 1) / 2;
-		while (n < len)
+		m = len - n; /* last n characters */
+		while (m < len)
 		{
-			_putchar(str[n]);
-			n++;
+			_putchar(str[m]);
+			m++;
 		}
 	}
 	_putchar('\n');
