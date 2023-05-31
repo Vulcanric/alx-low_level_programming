@@ -8,7 +8,7 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i; /* Index */
+	int len; /* Length of string including NULL byte*/
 
 	/*
 	 * FOR LOOP
@@ -16,9 +16,19 @@ char *_strcpy(char *dest, char *src)
 	 *  break when index of pointer src is equal to NULL byte
 	 *  Increment i
 	 */
-	for (i = 0; src[i] != '\0'; i++)
+	len = 0;
+	while (src[len] != '\0')
 	{
-		dest[i] = src[i]; /* Assign indexes of dest to be equal to indexes of src */
+		len++; /* Increment till it is equal to the length of str plus NULL */
+	}
+
+	while (len >= 0) /* WHILE length is greater than or equal to 0*/
+	{
+		dest[len] = src[len]; /*
+					* set each character of dest to be equal
+					* to the same character on src
+					*/
+		len--;
 	}
 	return (dest); /* return the copied value stored in dest */
 }
