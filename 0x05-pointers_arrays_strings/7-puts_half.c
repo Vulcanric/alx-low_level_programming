@@ -8,23 +8,21 @@
  */
 void puts_half(char *str)
 {
-	int n, last_index, len = 0; /* Length of the string(len) */
+	int n, len = 0; /* Length of the string(len) */
 
 	while (str[len] != '\0')
 	{
 		len++; /* this will give the length of the string with NULL byte */
 	}
 
-	last_index = len - 1; /* number of indexes */
-
-	if (!(last_index % 2 == 0)) /* checking IF the number of indexes is odd */
+	if (len % 2 != 0) /* IF the length of the string is odd */
 	{
-		n = len / 2; /* half of the string */
+		n = (len - 1) / 2; /* half of the string */
 		while (n <= len)
 		{
 			_putchar(str[n]);
 			n++;
 		}
-		_putchar('\n');
 	}
+	_putchar('\n');
 }
