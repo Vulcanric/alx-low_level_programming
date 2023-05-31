@@ -23,7 +23,7 @@ char *_strcat(char *dest, char *src)
 	}
 
 	i = 0;
-	while (i <= len1)
+	while (i < len1)
 	{
 		dest[len2] = src[i];
 		len2 = len2 + 1;
