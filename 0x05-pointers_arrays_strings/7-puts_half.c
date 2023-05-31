@@ -15,8 +15,8 @@ void puts_half(char *str)
 		len++; /* this will give the length of the string */
 	}
 
-	n = len / 2; /* half of the string */
-	while (n <= len)
+	n = (len) / 2; /* half of the string */
+	while (n < len)
 	{
 		_putchar(str[n]); /* print chars from middle(n) to end(len) */
 		n++;
