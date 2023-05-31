@@ -12,13 +12,13 @@ void puts_half(char *str)
 
 	while (str[len] != '\0')
 	{
-		len++; /* this will give the length of the string with NULL byte */
+		len++; /* this will give the length of the string */
 	}
 
-	n = (len - 1) / 2; /* half of the string */
+	n = len / 2; /* half of the string */
 	while (n <= len)
 	{
-		_putchar(str[n]);
+		_putchar(str[n]); /* print chars from middle(n) to end(len) */
 		n++;
 	}
 	_putchar('\n');
