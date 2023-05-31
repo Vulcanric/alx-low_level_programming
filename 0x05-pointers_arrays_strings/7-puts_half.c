@@ -15,14 +15,11 @@ void puts_half(char *str)
 		len++; /* this will give the length of the string with NULL byte */
 	}
 
-	if (len % 2 != 0) /* IF the length of the string is odd */
+	n = (len - 1) / 2; /* half of the string */
+	while (n <= len)
 	{
-		n = (len - 1) / 2; /* half of the string */
-		while (n <= len)
-		{
-			_putchar(str[n]);
-			n++;
-		}
+		_putchar(str[n]);
+		n++;
 	}
 	_putchar('\n');
 }
