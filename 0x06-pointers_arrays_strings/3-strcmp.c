@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _strcmp - Compares two strings.
  * @s1: Pointer to first string.
@@ -9,26 +8,28 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int retval, i; /* Declare return value and index */
+	int retval, n, i; /* Declare return value and index */
 
 	i = 0;
 	while (s1[i] != '\0' && s2[i] != '\0')
 	{
+		n = s1[i] - s2[i];
 		if (s1[i] == s2[i])
 		{
+			retval = n;
 			i++;
-			retval = 0;
 		}
 		else if (s1[i] > s2[i])
 		{
-			retval = 15;
+			retval = n;
 			break;
 		}
 		else if (s1[i] < s2[i])
 		{
-			retval = -15;
+			retval = n;
 			break;
 		}
+
 	}
 	return (retval);
 }
