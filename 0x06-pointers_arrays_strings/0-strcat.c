@@ -8,28 +8,18 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int i, len_src, len_dest; /* Iterator and length of string */
-
-	len_src = 0;
-	while (src[len_src] != '\0')
-	{
-		len_src++;
-	}
+	int i, len_dest; /* Iterator and length of string */
 
 	len_dest = 0;
 	while (dest[len_dest] != '\0')
 	{
-		len_dest++;
+		len_dest++; /* To get the length of dest */
 	}
 
-	i = 0;
-	while (i < len_src)
+	for (i = 0; src[i] != '\0'; i++)
 	{
 		dest[len_dest + i] = src[i];
-		i++;
 	}
-
-	dest[len_dest + i] = '\0'; /* adding Null byte to the end of appended dest */
 
 	return (dest);
 }
