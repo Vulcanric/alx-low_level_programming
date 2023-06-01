@@ -11,10 +11,16 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
 
-	for (i = 0; src[i] != '\0' && i < n; i++) /* Getting the amount to be copied */
+	/* Getting the amount to be copied */
+	for (i = 0; src[i] != '\0' && i < n; i++)
 	{
 		dest[i] = src[i];
 	}
+
+	/*
+	 * if the content of src is less than n, fill the remaining space
+	 * with null (null padding)
+	 */
 	while (i < n)
 	{
 		dest[i] = '\0';
