@@ -10,8 +10,6 @@
  */
 char *_strchr(char *s, char c)
 {
-/*	unsigned int i;  Index */
-
 	while (*s != '\0')
 	{
 		if (*s == c)
