@@ -9,36 +9,23 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-/* status to know if a character in s is matching a characeter in the set */
-	int status = 0;
-	char *null_ptr = 0;
+	int i;
 
 	while (*s != '\0')
 	{
-		while (*accept != '\0')
+		i = 0;
+		while (accept[i] != '\0')
 		{
 		/* IF s character matches a character in the set */
-			if (*s == *accept)
+			if (*s == accept[i])
 			{
-				status = 1; /* Set status to 1 */
-				break; /* THEN break this loop */
+			/* THEN return pointer to the character in s */
+				return (s);
 			}
-			else if (*s != *accept)
-				accept++;
-		}
-
-	/* To check the first occurence of similiarity between both */
-		if (status == 1) /* IF both character match ....*/
-		{
-			break; /* Break the outer loop */
-		/*
-		 * THEN return pointer to the byte in s that
-		 * matches one of the bytes in set
-		 */
-			return (s);
+			i++;
 		}
 		s++;
 	}
 
-	return (null_ptr); /* Otherwise, if no such byte found, return null */
+	return ('\0'); /* Otherwise, if no such byte found, return null */
 }
