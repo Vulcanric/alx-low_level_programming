@@ -10,6 +10,6 @@ void _print_rev_recursion(char *s)
 	if (*s) /* IF character is not null */
 	{
 		_print_rev_recursion(s + 1); /* Continues until last character */
+		_putchar(*s); /* THEN print characters from last character */
 	}
-	_putchar(*s); /* THEN print characters from last character */
 }
