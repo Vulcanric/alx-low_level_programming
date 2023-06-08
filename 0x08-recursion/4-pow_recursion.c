@@ -10,7 +10,7 @@ int _pow_recursion(int x, int y)
 {
 	if (y < 0) /* IF y is lower than 0 */
 		return (-1); /* return -1 as exponential */
-	else if (y == 0) /* ELSE IF y is zero */
+	if (y == 0) /* ELSE IF y is zero */
 		return (1); /* Set base value for function */
 	else
 	{
