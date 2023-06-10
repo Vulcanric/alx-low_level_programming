@@ -8,23 +8,30 @@
  */
 int _atoi(char *s)
 {
-	int i; /* Index counter */
+	unsigned int res = 0; /* result of the conversion */
+	int sign = 1; /* To determine sign of character */
+	int i;
 
-	/*
-	 * FOR LOOP
-	 *  Initialize i to be zero
-	 *  break when pointer-to-string index is NULL byte
-	 *  Increment i
-	 */
-	for (i = 0; s[i] != '\0'; i++)
+	i = 0;
+	/* Handling signs */
+		/* WHILE character is not null and is not a number */
+	while (s[i] != '\0' && !(s[i] >= '0' && s[i] <= '9'))
 	{
-		/* IF character at index is a number or sign plus or minus */
-		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == 43 || s[i] == 45))
-		{
-			return (s[i]); /* THEN return the number or sign */
-		}
-		else /* ELSE if it is any other character */
-			return (0); /* do not consider */
+		if (s[i] == '-') /* IF character is minus */
+			sign *= -1; /* Let sign be whatever sign was before * -1 */
+		i++;
 	}
-	return (0);
+
+	/* Handling numbers */
+		/* WHILE character is not null and is a number('0' - '9') */
+	while (s[i] != '\0' && (s[i] >= '0' && s[i] <= '9'))
+	{
+		res = res * 10 + (s[i] - '0');
+		i++;
+	}
+	
+	/* Applying sign to my result by multiply the sign gotten by result */
+	res *= sign;
+
+	return (res);
 }
