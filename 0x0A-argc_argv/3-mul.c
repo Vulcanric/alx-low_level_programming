@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int i; /* Index */
 	int mul = 1; /* Variable to hold value gotten from the multiplication */
 
-	if (argc > 1 && argc <= 3) /* Checking if the arguments passed are two */
+	if (argc == 3) /* Checking if the arguments passed are two */
 	{
 		for (i = 1; i < argc; i++)
 		{
