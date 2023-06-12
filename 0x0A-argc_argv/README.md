@@ -14,23 +14,23 @@
 - Prints a number, followed by a new line
 - File: `1-args.c`
 
-### A program that prints all arguments it receives.
+### 2. A program that prints all arguments it receives.
 - All arguments are printed, including the first one
 - Prints one argument per line, ending with a new line
 - File: `2-args.c`
 
-### A program that multiplies two numbers passed to it
+### 3. A program that multiplies two numbers passed to it
 - Prints the result of the multiplication followed by a new line
 - If the program does not receive two arguments, it prints `Error`, followed by a new line
 - File: `3-mul.c`
 
-### A program that adds positive numbers.
+### 4. A program that adds positive numbers.
 - Prints the result followed by a new line
 - Prints `0`, if no number is passed to it
 - Prints `Error`, if one of the number contains symbols that are not digits
 - File: `4-add.c`
 
-### program that prints the minimum number of coins to make change for an amount of money.
+### 5. program that prints the minimum number of coins to make change for an amount of money.
 - Usage: `./change cents`
 - where `cents` is the amount of cents you need to give back
 - Prints `Error` if the number of arguments passed to the  program is not exactly 1
