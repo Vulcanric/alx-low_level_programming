@@ -1,5 +1,6 @@
 #include "main.h"
 
+int is_prime(int n, int divisor);
 /**
  * is_prime_number - Checks if a number is a prime number or not
  * @n: Number to examine
@@ -7,18 +8,24 @@
  */
 int is_prime_number(int n)
 {
-	int i;
+	if (n <= 1)
+		return (0);
+	else
+		return (is_prime(n, 2));
+}
 
-	if (n >= 2)
-	{
-		for (i = 1; i < n; i++)
-		{
-			if (n % i == 0) /* Checking IF i is a multiple of n */
-				return (0); /* IF it is, return 0 */
-			else
-				return (1); /* IF it is not, return 1 */
-		}
-		is_prime_number(n);
-	}
-	return (0);
+/**
+ * is_prime - Helps the is_prime_number function
+ * @n: Number to examine
+ * @divisor: multiples under n
+ * Return: 1 if number is prime, else 0
+ */
+int is_prime(int n, int divisor)
+{
+	if (n == divisor)
+		return (1);
+	else if (n % divisor == 0)
+		return (0);
+	else
+		return (is_prime(n, divisor + 1));
 }
