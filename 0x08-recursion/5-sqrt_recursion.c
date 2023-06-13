@@ -1,6 +1,6 @@
 #include "main.h"
 
-int sqrt_actual_function(int n);
+int sqrt_function(int n, int lower_nums);
 /**
  * _sqrt_recursion - Function that returns the natural square root of a number
  * @n: Number
@@ -11,40 +11,27 @@ int _sqrt_recursion(int n)
 {
 	if (n == 1)
 		return (1);
-	if (n == 0)
-		return (0);
 	if (n < 0) /* IF number is a negative number ...*/
 		return (-1); /* return -1 signifying error! */
 	if (n > 1)
-		return (sqrt_actual_function(n));
+		return (sqrt_function(n, 2));
+
 	return (0);
 }
 
 /**
- * sqrt_main_function - Iterates through all natural
- * numbers from zero to n , checking for the square root.
+ * sqrt_function - Helps the _sqrt_recursion function
  * @n: Number to find it's square root.
- * Return: square root of n.
+ * @lower_nums: numbers lower than 'n'
+ * Return: square root of n, else -1
  */
-int sqrt_actual_function(int n)
+int sqrt_function(int n, int lower_nums)
 {
-/* Declare iterator variable, and variable to hold the value returned */
-	int i = 0;
-	int valret = 0;
+	if (n == lower_nums * lower_nums) /* IF number square is equal to n */
+		return (lower_nums); /* return number */
+/* ELSE if number square is not equal to n until number is equal to n */
+	else if (n == lower_nums)
+		return (-1); /* return -1 indicating n is not a square */
 
-/* WHILE loop to go through all natural from 0 to n */
-	while (i < n)
-	{
-	/* IF square of the natural number is equal to n */
-		if ((i * i) == n)
-		{
-		/* Let the value returned be the natural number */
-			valret = i;
-			break; /* THEN break loop to stop searching */
-		}
-		else
-			valret = -1; /* Indicating that n's sqrt is not a natural number */
-		i++; /* Increment i to the next natural number in search */
-	}
-	return (valret); /* return the return-value gotten from condition */
+	return (sqrt_function(n, lower_nums + 1));
 }
