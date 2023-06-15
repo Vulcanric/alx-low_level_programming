@@ -9,7 +9,7 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int i, size = strlen(str) - 1;
+	unsigned int i, size = strlen(str) + 1;
 	char *new_str;
 
 	if (str == NULL)
