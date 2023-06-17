@@ -25,8 +25,11 @@ int **alloc_grid(int width, int height)
 		ret_ptr[i] = malloc(sizeof(int) * width);
 		if (ret_ptr[i] == NULL)
 		{
-			for (i = 0; i < height; i++)
-				free(ret_ptr[i]);
+			for (j = 0; j < i; i++)
+				free(ret_ptr[j]);
+
+			/* Freeing memory for array of pointers */
+			free(ret_ptr);
 		}
 	}
 
