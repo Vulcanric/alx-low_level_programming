@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - Returns a pointer to a 2D array of integers
+ * alloc_grid - Creates a 2D array of integers
  * @width: size of width
  * @height: Size of height
  * Return: Pointer to 2D array if success, else NULL if failed or
@@ -10,36 +10,33 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **ret_ptr;
+	int **arr;
 	int i, j;
 
 	if (width < 1 || height < 1)
 		return (NULL);
-
-	ret_ptr = malloc(sizeof(int) * height);
-	if (ret_ptr == NULL) /* Handling malloc return */
+	/* Allocating memory for the array of pointers */
+	arr = malloc(sizeof(int) * height);
+	if (arr == NULL)
 		return (NULL);
 
 	for (i = 0; i < height; i++)
 	{
-		ret_ptr[i] = malloc(sizeof(int) * width);
-		if (ret_ptr[i] == NULL)
+		/* Allocating memory for each pointer */
+		arr[i] = malloc(sizeof(int) * width);
+		if (arr[i] == NULL) /* IF the allocation fails */
 		{
-			for (j = 0; j < i; i++)
-				free(ret_ptr[j]);
-
-			/* Freeing memory for array of pointers */
-			free(ret_ptr);
+			for (j = 0; j < i; j++)
+				free(arr[j]); /* Free the previously allocated pointer*/
+			free(arr); /* Free the array */
+			return (NULL); /* THEN return null indicating error */
 		}
-	}
 
-	/* Initializing each element of the 2D array to 0 */
-	for (i = 0; i < height; i++)
-	{
+	/* Initializing each elements of the 2D array with 0 */
 		for (j = 0; j < width; j++)
 		{
-			ret_ptr[i][j] = 0;
+			arr[i][j] = 0;
 		}
 	}
-	return (ret_ptr);
+	return (arr);
 }
