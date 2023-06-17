@@ -12,6 +12,7 @@ void free_grid(int **grid, int height)
 			free(grid[i]); /* Free the memory allocated for each pointer */
 			i++;
 		}
-		free(grid); /* Release the memory allocated for array of pointers */
+	/* Release the memory allocated for array of pointers */
+		free(grid);
 	}
 }
