@@ -18,6 +18,10 @@ struct dog
 };
 
 /* Creating alias for "struct dog" */
+
+/**
+ * dog_t - Typedef for struct dog
+ */
 typedef struct dog dog_t;
 
 /* Prototypes of functions */
