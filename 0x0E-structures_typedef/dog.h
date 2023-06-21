@@ -1,7 +1,6 @@
 #ifndef DOG_H
 #define DOG_H
 
-void init_dog(struct dog *d, char *name, float age, char *owner);
 /**
  * struct dog - User-defined type
  * @name: element1
@@ -17,4 +16,7 @@ struct dog
 	float age;
 	char *owner;
 };
+
+/* Prototypes of other functions */
+void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif
