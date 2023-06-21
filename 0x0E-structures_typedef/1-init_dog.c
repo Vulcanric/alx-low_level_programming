@@ -12,11 +12,8 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	/* Allocating memory for variable */
-	d = malloc(sizeof(struct dog));
-	if (d == NULL) /* Handling malloc return */
-		return (NULL);
+	/* Initializing members of the variable */
 	d->name = name;
 	d->age = age;
-	(*d).owner = owner;
+	(*d).owner = owner; /* Another way of accessing element */
 }
