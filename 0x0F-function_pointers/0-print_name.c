@@ -12,5 +12,7 @@ void print_name(char *name, void (*f)(char *))
 	if (f != NULL)
 		f(name); /* Calling back the function that f is pointing to */
 	else
+	{
 		return;
+	}
 }
