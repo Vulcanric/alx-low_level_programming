@@ -8,5 +8,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name); /* Calling back the function that f is pointing to */
+	(*f)(name); /* Calling back the function that f is pointing to */
+
+	return;
 }
