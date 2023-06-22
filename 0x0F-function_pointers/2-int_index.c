@@ -19,7 +19,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 	for (i = 0; i < size; i++)
 	{
-		if (cmp(array[i]) == FALSE) /* IF cmp results false (0)*/
+		if (cmp(array[i]) == 0) /* IF cmp results false */
 		{
 			continue; /* Move to the next integer */
 			return (-1);
