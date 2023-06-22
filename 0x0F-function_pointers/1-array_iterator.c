@@ -11,6 +11,9 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	long unsigned int i = 0; /* Same as size_t */
 
+	if (array == NULL || action == NULL)
+		return;
+
 	while (i < size) /* Iterating through all elements */
 	{
 		action(array[i]); /* Perform function pointed to by action */
