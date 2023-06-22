@@ -33,6 +33,6 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		return (-1);
 	}
-
-	return (i); /* return the index where the integer was found */
+	else
+		return (i); /* return the index where the integer was found */
 }
