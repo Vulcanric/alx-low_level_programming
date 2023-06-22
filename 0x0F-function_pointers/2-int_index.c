@@ -14,18 +14,22 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
+	if (array == NULL || cmp == NULL)
+		return (-1);
+
 	if (size <= 0)
 		return (-1);
 
 	for (i = 0; i < size; i++)
 	{
-		if (cmp(array[i]) == 0) /* IF cmp results false */
+		if (cmp(array[i]) == FALSE) /* IF cmp results to 0 */
 		{
-			continue; /* Move to the next integer */
+			continue; /* move to the next integer in list */
 			return (-1);
 		}
 		else
-			break;
+			break; /* break to avoid more than one inclusion and */
 	}
-	return (i); /* return the index of the element */
+
+	return (i); /* return the index where the integer was found */
 }
