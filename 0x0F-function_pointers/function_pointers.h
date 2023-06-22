@@ -1,3 +1,11 @@
+#ifndef TRUE
+#define TRUE 1
+#endif
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
 #ifndef FUNCTION_POINTERS_H
 #define FUNCTION_POINTERS_H
 
