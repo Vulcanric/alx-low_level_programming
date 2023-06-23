@@ -25,8 +25,6 @@ int (*get_op_func(char *s))(int, int)
 	{
 		if (*(ops[i].op) != *s)
 			i++;
-		else
-			break;
 	}
 
 	/* IF s does not match any character until ops[i].op is null */
