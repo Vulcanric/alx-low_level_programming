@@ -13,7 +13,6 @@ int main(int __attribute__((unused))argc, char *argv[])
 {
 	int num1, num2, result;
 	char *op_ch;
-	char op_l[] = "/%";
 
 	if (argc != 4)
 	{
@@ -26,17 +25,17 @@ int main(int __attribute__((unused))argc, char *argv[])
 	num2 = atoi(argv[3]);
 
 	/*
-	 * IF operator is not among the 5 operators
-	 * or IF operator given is more than one
+	 * IF the operator given is not among the 5 operators
+	 * or operator given is more than one
 	 */
-	if (get_op_func(op_ch) == NULL || *argv[2]++)
+	if (get_op_func(op_ch) == NULL || op_ch[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	/* IF operator given is '/' or '%' AND second num is 0 */
-	if ((op_ch == op_l || op_ch == (op_l + 1)) && num2 == 0)
+	/* IF */
+	if ((*op_ch == '/' || *op_ch == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
