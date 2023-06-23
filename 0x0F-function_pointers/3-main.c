@@ -3,7 +3,9 @@
 #include <stdlib.h>
 
 /**
- * main - main function of the calculator functions
+ * main - main function of the calculator program
+ * @argc: Argument counter
+ * @argv: Argument vector (Characters passed as argument)
  *
  * Return: 0 (Success)
  */
@@ -23,12 +25,17 @@ int main(int __attribute__((unused))argc, char *argv[])
 	op_ch = argv[2];
 	num2 = atoi(argv[3]);
 
-	if (get_op_func(op_ch) == NULL)
+	/*
+	 * IF operator is not among the 5 operators
+	 * or IF operator given is more than one
+	 */
+	if (get_op_func(op_ch) == NULL || *argv[2]++)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
+	/* IF operator given is '/' or '%' AND second num is 0 */
 	if ((op_ch == op_l || op_ch == (op_l + 1)) && num2 == 0)
 	{
 		printf("Error\n");
