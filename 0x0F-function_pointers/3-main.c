@@ -13,15 +13,15 @@ int main(int __attribute__((unused))argc, char *argv[])
 	char *op_ch;
 	char op_l[] = "/%";
 
-	num1 = atoi(argv[1]);
-	op_ch = argv[2];
-	num2 = atoi(argv[3]);
-
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+
+	num1 = atoi(argv[1]);
+	op_ch = argv[2];
+	num2 = atoi(argv[3]);
 
 	if (get_op_func(op_ch) == NULL)
 	{
