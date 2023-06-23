@@ -29,9 +29,7 @@ int (*get_op_func(char *s))(int, int)
 
 	/* IF s does not match any character until ops[i].op is null */
 	if (ops[i].op == NULL)
-	{
 		return (NULL);
-	}
 
 	return (ops[i].f);
 }
