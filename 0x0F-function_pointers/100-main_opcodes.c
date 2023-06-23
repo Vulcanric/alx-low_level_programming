@@ -32,7 +32,8 @@ int main(int argc, char *argv[])
 		printf("%02hhx", opcode_byte[i]);
 		if (i == (numbyte - 1))
 			printf("\n");
-		printf(" ");
+		else
+			printf(" ");
 	}
 
 	return (0);
