@@ -24,7 +24,7 @@
 ### Tasks
 #### 0. Beauty is variable, ugliness is constant
 This function returns the sum of all its parameters.
-- Prototype: `int sum_them_all(const unsigned int n, ...);
+- Prototype: `int sum_them_all(const unsigned int n, ...);`
 - `n` is the number of integers passed to the function
 - If `n == 0`, it returns 0
 - File: `0-sum_them_all.c`
