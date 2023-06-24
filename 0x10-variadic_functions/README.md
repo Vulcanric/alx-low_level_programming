@@ -1,9 +1,9 @@
 ## 0x10. C - Variadic functions
 ### Learning Objectives
 - What are variadic functions
-	- Variadic functions are functions that can take a variable amount of arguments
+	- Variadic functions are functions that can take a variable number of arguments
 - How to use `va_start`, `va_arg` and `va_end`
-	1. Firtly, declare a variable of type `va_list`
+	1. Firstly, declare a variable of type `va_list`
 		- This indicates the variable arguments list
 	2. Secondly, the `va_start` macro is used to initialize the list
 		- It takes two arguments
