@@ -1,9 +1,9 @@
 ## 0x10. C - Variadic functions
 ### Learning Objectives
 - What are variadic functions
-	- Variadic functions are functions that can take a variable amount of arguments
+	- Variadic functions are functions that can take a variable number of arguments
 - How to use `va_start`, `va_arg` and `va_end`
-	1. Firtly, declare a variable of type `va_list`
+	1. Firstly, declare a variable of type `va_list`
 		- This indicates the variable arguments list
 	2. Secondly, the `va_start` macro is used to initialize the list
 		- It takes two arguments
@@ -24,7 +24,7 @@
 ### Tasks
 #### 0. Beauty is variable, ugliness is constant
 This function returns the sum of all its parameters.
-- Prototype: `int sum_them_all(const unsigned int n, ...);
+- Prototype: `int sum_them_all(const unsigned int n, ...);`
 - `n` is the number of integers passed to the function
 - If `n == 0`, it returns 0
 - File: `0-sum_them_all.c`
