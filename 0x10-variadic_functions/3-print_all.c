@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-
 /**
  * print_all - Prints anything
  * @format: list of types of arguments passed to the function
@@ -10,42 +9,44 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = 0;
-	char *str, types[5] = "cifs";
+	int i = 0;
+	char *str = "", *sep = "";
 	va_list all;
 
 	va_start(all, format);
-
-	while (format[i] != '\0')
+	if (format)
 	{
-		switch (format[i])
+		while (format[i])
 		{
-			case 'c':
-				printf("%c", va_arg(all, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(all, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(all, double));
-				break;
-			case 's':
-				str = va_arg(all, char *);
-				if (str != NULL)
-					printf("%s", str);
-				if (str == NULL)
-					printf("(nil)");
-				break;
-			default:
-				break;
-		}
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", sep, va_arg(all, int));
+					break;
+				case 'f':
+					printf("%s%f", sep, va_arg(all, double));
+					break;
+				case 'i':
+					printf("%s%d", sep, va_arg(all, int));
+					break;
+				case 's':
+					str = va_arg(all, char *);
+					printf("%s", sep);
+					while (str)
+					{
+						printf("%s", str);
+						break;
+					}
+					if (!str)
+						printf("(nil)");
+					break;
+				default:
+					break;
+			}
 
-		while (types[j] != '\0' && format[i + 1] != '\0' && (format[i] == types[j]))
-		{
-			printf(", ");
-			j++;
+			sep = ", ";
+			i++;
 		}
-		i++;
 	}
 	printf("\n");
 	va_end(all);
