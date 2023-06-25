@@ -9,15 +9,16 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *str = "", *sep = "";
+	int i = 0, status;
+	char *str, *sep = "";
 	va_list all;
 
 	va_start(all, format);
-	if (format)
+	if (format[i])
 	{
 		while (format[i])
 		{
+			status = 1;
 			switch (format[i])
 			{
 				case 'c':
@@ -31,20 +32,16 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					str = va_arg(all, char *);
-					printf("%s", sep);
-					while (str)
-					{
-						printf("%s", str);
-						break;
-					}
 					if (!str)
-						printf("(nil)");
+						str = "(nil)";
+					printf("%s%s", sep, str);
 					break;
 				default:
+					status = 0;
 					break;
 			}
-
-			sep = ", ";
+			if (status != 0)
+				sep = ", ";
 			i++;
 		}
 	}
