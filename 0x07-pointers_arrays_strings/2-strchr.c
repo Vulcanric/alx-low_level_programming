@@ -21,7 +21,7 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 	if (status != 1)
-		return (NULL);
+		_putchar('\n');
 	else
 		return (s);
 }
