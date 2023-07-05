@@ -37,7 +37,7 @@ size_t _strlen(const char *str)
 	while (*str != '\0')
 	{
 		counter++;
-		sr++;
+		str++;
 	}
 	return (counter);
 }
