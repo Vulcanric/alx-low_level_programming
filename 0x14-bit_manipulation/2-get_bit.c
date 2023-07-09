@@ -15,7 +15,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	for (i = 0; i < index; i++)
 	{
 		/* moving bit at index to the least significant bit */
-		if (n != 0)
+		if (i < 64)
 			n >>= 1;
 		else /* if the bit doesn't exist */
 			return (-1);
