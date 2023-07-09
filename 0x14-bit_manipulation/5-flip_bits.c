@@ -12,7 +12,10 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned int bits_flip = 0;
 	unsigned long int inv_bits;
 
-	/* Inv_bits now hold a mask containing the bits to be flipped as 1 and others 0 */
+	/*
+	 * Inv_bits will hold a mask containing the bits to be
+	 * flipped as 1 and others 0
+	 */
 	inv_bits = n ^ m;
 	while (inv_bits != 0) /* Counting all bits with 1 while moving to right*/
 	{
