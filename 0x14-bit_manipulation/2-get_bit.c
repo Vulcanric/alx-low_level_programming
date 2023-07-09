@@ -15,9 +15,9 @@ int get_bit(unsigned long int n, unsigned int index)
 	for (i = 0; i < index; i++)
 	{
 		/* moving bit at index to the least significant bit */
-		if (i < 64)
+		if (i < 128) /* Considering 128 as the highest bits range */
 			n >>= 1;
-		else /* if the bit doesn't exist */
+		else /* ELSE if the bit is out of range */
 			return (-1);
 	}
 
