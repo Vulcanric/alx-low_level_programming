@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytes_read = (unsigned int)bytes_read;
 
 	/* Printing number of bytes read */
-	bytes_printed = write(1, buff, bytes_read);
+	bytes_printed = write(STDOUT_FILENO, buff, bytes_read);
 	if (bytes_printed == -1)
 		return (0);
 
