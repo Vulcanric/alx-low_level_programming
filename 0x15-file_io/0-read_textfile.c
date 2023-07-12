@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <fcntl.h>
 #include "main.h"
 
@@ -28,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	bytes_read = read(fd, buff, letters); /* Read from file with fildes fd */
 	bytes_read = (unsigned)bytes_read; /* Changing bytes_read be of size_t type */
-	bytes_printed = write(1, buff, bytes_read); /* Print to stdout the bytes read */
+	bytes_printed = dprintf(2, "%s", buff);
 	close(fd);
 
 	return (bytes_printed);
