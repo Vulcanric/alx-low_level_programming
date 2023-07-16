@@ -1,7 +1,6 @@
 #include "main.h"
 #include <sys/types.h> /* To temporarily change the permision mask */
 #include <sys/stat.h> /* Same here */
-
 /**
  * main - Copies the content of a file to another file
  * @argc: Argument counter
