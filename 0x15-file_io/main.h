@@ -1,11 +1,14 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define SIZE 1024 /* Buffer size defined */
+
 /* Used header file */
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdio.h>
 
 /* Prototypes of the functions */
 int _putchar(char c);
