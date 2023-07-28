@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv)
 {
-	int bytes_read, bytes_written = 0, fd_from, fd_to, fd, r1, r2;
+	int bytes_read, bytes_written = 0, fd_from, fd_to, r1, r2;
 	char *file_from, *file_to, buff[SIZE];
 
 	if (argc != 3)
@@ -50,13 +50,9 @@ int main(int argc, char **argv)
 	}
 	r1 = close(fd_from);
 	r2 = close(fd_to);
-	if (r1 != 0)
-		fd = fd_from;
-	if (r2 != 0)
-		fd = fd_to;
 	if (r2 != 0 || r1 != 0)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd");
 		exit(100);
 	}
 	return (0);
