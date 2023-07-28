@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 	r2 = close(fd_to);
 	if (r2 != 0 || r1 != 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd");
+		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
 	}
 	return (0);
