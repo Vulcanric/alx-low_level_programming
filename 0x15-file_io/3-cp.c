@@ -1,6 +1,5 @@
 #include "main.h"
-#include <sys/types.h> /* To temporarily change the permision mask */
-#include <sys/stat.h> /* Same here */
+#include <unistd.h>
 /**
  * main - Copies the content of a file to another file
  * @argc: Argument counter
@@ -14,7 +13,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	file_from = argv[1];
@@ -30,14 +29,14 @@ int main(int argc, char **argv)
 
 	if (fd_from == -1 || bytes_read == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		close(fd_from);
 		exit(98);
 	}
 
 	if (bytes_written == -1 || fd_to == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		close(fd_to);
 		close(fd_from);
 		exit(99);
@@ -57,7 +56,7 @@ int main(int argc, char **argv)
 		fd = fd_to;
 	if (r2 != 0 || r1 != 0)
 	{
-		dprintf(2, "Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
 		exit(100);
 	}
 	return (0);
