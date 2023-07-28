@@ -9,42 +9,54 @@
  */
 int main(int argc, char **argv)
 {
-	int bytes_read, bytes_written, fd, fd_from, fd_to;
+	int bytes_read, bytes_written = 0, fd_from, fd_to, fd, r1, r2;
 	char *file_from, *file_to, buff[SIZE];
-	mode_t old_mask;
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	file_from = argv[1];
 	file_to = argv[2];
 	fd_from = open(file_from, O_RDONLY);
-	old_mask = umask(0); /* Changing the mask to 000 */
-	fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 00664);
-	umask(old_mask); /* Changing the mask back to the default mask */
 
-	if (fd_from == -1)
+	if (fd_from != -1)
+	{
+		fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 00664);
+		bytes_read = read(fd_from, buff, SIZE);
+		bytes_written = write(fd_to, buff, bytes_read);
+	}
+
+	if (fd_from == -1 || bytes_read == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		close(fd_from);
 		exit(98);
 	}
-	bytes_read = read(fd_from, buff, SIZE);
-	bytes_written = write(fd_to, buff, bytes_read);
+
 	if (bytes_written == -1 || fd_to == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", file_to);
 		close(fd_to);
+		close(fd_from);
 		exit(99);
 	}
-	while (close(fd_to) != 0 || close(fd_from) != 0)
+
+	/* Read file chunck by chunk until EOF is reached */
+	while (bytes_read != 0)
 	{
-		if (!close(fd_to))
-			fd = fd_to;
-		else
-			fd = fd_from;
+		bytes_read = read(fd_from, buff, SIZE);
+		bytes_written = write(fd_to, buff, bytes_read);
+	}
+	r1 = close(fd_from);
+	r2 = close(fd_to);
+	if (r1 != 0)
+		fd = fd_from;
+	if (r2 != 0)
+		fd = fd_to;
+	if (r2 != 0 || r1 != 0)
+	{
 		dprintf(2, "Can't close fd %d\n", fd);
 		exit(100);
 	}
