@@ -36,9 +36,9 @@ void magic_bytes(Elf64_Ehdr *elfheader, char *elf_secname)
  */
 void class_info(Elf64_Ehdr *elfheader, char *elf_secname)
 {
-	magic_bytes(elfheader, "  Magic:");
 	int i = 0;
 
+	magic_bytes(elfheader, "  Magic:");
 	printf("%s", elf_secname);
 	while (i < 29)
 	{
@@ -67,9 +67,9 @@ void class_info(Elf64_Ehdr *elfheader, char *elf_secname)
  */
 void data_info(Elf64_Ehdr *elfheader, char *elf_secname)
 {
-	class_info(elfheader, "  Class:");
 	int i = 0;
 
+	class_info(elfheader, "  Class:");
 	printf("%s", elf_secname);
 	while (i < 30)
 	{
@@ -99,9 +99,9 @@ void data_info(Elf64_Ehdr *elfheader, char *elf_secname)
  */
 void version_info(Elf64_Ehdr *elfheader, char *elf_secname)
 {
-	data_info(elfheader, "  Data:");
 	int i = 0;
 
+	data_info(elfheader, "  Data:");
 	printf("%s", elf_secname);
 	while (i < 27)
 	{
@@ -130,9 +130,9 @@ void version_info(Elf64_Ehdr *elfheader, char *elf_secname)
  */
 void osabi_info(Elf64_Ehdr *elfheader, char *elf_secname)
 {
-	version_info(elfheader, "  Version:");
 	int i = 0;
 
+	version_info(elfheader, "  Version:");
 	printf("%s", elf_secname);
 	while (i < 28)
 	{
@@ -186,9 +186,9 @@ void osabi_info(Elf64_Ehdr *elfheader, char *elf_secname)
  */
 void abiVersion_info(Elf64_Ehdr *elfheader, char *elf_secname)
 {
-	osabi_info(elfheader, "  OS/ABI:");
 	int i = 0;
 
+	osabi_info(elfheader, "  OS/ABI:");
 	printf("%s", elf_secname);
 	while (i < 23)
 	{
@@ -207,9 +207,9 @@ void abiVersion_info(Elf64_Ehdr *elfheader, char *elf_secname)
  */
 void type_info(Elf64_Ehdr *elfheader, char *elf_secname)
 {
-	abiVersion_info(elfheader, "  ABI Version:");
 	int i = 0;
 
+	abiVersion_info(elfheader, "  ABI Version:");
 	printf("%s", elf_secname);
 	while (i < 30)
 	{
@@ -249,9 +249,9 @@ void type_info(Elf64_Ehdr *elfheader, char *elf_secname)
  */
 void entryPointAddr_info(Elf64_Ehdr *elfheader, char *elf_secname)
 {
-	type_info(elfheader, "  Type:");
 	int i = 0;
 
+	type_info(elfheader, "  Type:");
 	printf("%s", elf_secname);
 	while (i < 15)
 	{
