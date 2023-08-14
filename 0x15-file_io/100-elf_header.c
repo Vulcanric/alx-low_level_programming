@@ -21,7 +21,9 @@ void magic_bytes(Elf64_Ehdr *elfheader, char *elf_secname)
 	printf("   ");
 	while (i < 16)
 	{
-		printf("%02x ", elfheader->e_ident[i]);
+		printf("%02x", elfheader->e_ident[i]);
+		if (i != 16 - 1)
+			putchar(' ');
 		i++;
 	}
 	putchar('\n');
