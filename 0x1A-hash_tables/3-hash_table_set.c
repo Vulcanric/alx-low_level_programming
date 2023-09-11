@@ -49,10 +49,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while (curr_item && strcmp(curr_item->key, key) != 0)
 			curr_item = curr_item->next;
 
-		/* If the loop breaks before current item is null */
-		/* meaning the key matched. Update key value */
 		if (curr_item != NULL)
-		{/* clear former memory and update with new value */
+		{
 			strcpy(curr_item->value, new_item->value);
 			free_item(new_item);  /* no longer needed */
 		}
