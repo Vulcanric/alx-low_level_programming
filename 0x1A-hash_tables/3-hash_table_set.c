@@ -7,9 +7,12 @@
  */
 void free_item(hash_node_t *node)
 {
-	free(node->key);
-	free(node->value);
-	free(node->next);
+	if (node->key)
+		free(node->key);
+	if (node->value)
+		free(node->value);
+	if (node->next)
+		free(node->next);
 	free(node);
 }
 
@@ -29,13 +32,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	new_item = malloc(sizeof(hash_node_t));
-	new_item->key = (char *)malloc(sizeof(char) * strlen(key));
-	strcpy(new_item->key, key);
+
+	if (key)
+		new_item->key = strdup(key);
 	if (value)
-	{
-		new_item->value = (char *)malloc(sizeof(char) * strlen(value));
-		strcpy(new_item->value, value);
-	}
+		new_item->value = strdup(value);
 	new_item->next = NULL;
 
 	/* getting the index, where to store key-value */
@@ -52,7 +53,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (curr_item != NULL)
 		{
 			strcpy(curr_item->value, new_item->value);
-			free_item(new_item);  /* no longer needed */
+			free_item(new_item);
 		}
 		else
 		{
