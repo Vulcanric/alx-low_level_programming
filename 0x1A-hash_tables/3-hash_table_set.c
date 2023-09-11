@@ -8,12 +8,8 @@
 void free_item(hash_node_t *node)
 {
 	free(node->key);
-
-	if (node->value)
-		free(node->value);
-
-	if (node->next)
-		free(node->next);
+	free(node->value);
+	free(node->next);
 	free(node);
 }
 
@@ -50,20 +46,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new_item;
 	else
 	{
-		/* Handling collisions and updating of values */
-		while (curr_item->next && strcmp(curr_item->key, key) != 0)
+		while (curr_item && strcmp(curr_item->key, key) != 0)
 			curr_item = curr_item->next;
 
 		/* If the loop breaks before current item is null */
 		/* meaning the key matched. Update key value */
-		if (curr_item->next != NULL)
+		if (curr_item != NULL)
 		{/* clear former memory and update with new value */
-			free(curr_item->value);
-			curr_item->value = new_item->value;
+			strcpy(curr_item->value, new_item->value);
 			free_item(new_item);  /* no longer needed */
 		}
 		else
-			curr_item->next = new_item;
+		{
+			new_item->next = ht->array[index];
+			ht->array[index] = new_item;
+		}
 	}
 	return (0);
 }
