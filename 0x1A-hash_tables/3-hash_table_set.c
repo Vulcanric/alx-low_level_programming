@@ -25,10 +25,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_item, *curr_item;
 	unsigned long int index;
 
-	new_item = malloc(sizeof(hash_node_t));
-	if (!new_item)
+	if (!ht)
 		return (0);
 
+	new_item = malloc(sizeof(hash_node_t));
 	new_item->key = (char *)malloc(sizeof(char) * strlen(key));
 	strcpy(new_item->key, key);
 	if (value)
