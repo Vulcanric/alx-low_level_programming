@@ -12,7 +12,7 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 main.o: main.c
-	$(CC) -c main.c -o $@
+	$(CC)	-c -o $@ main.c
 
 school.o: school.c
-	$(CC) -c school.c -o $@
+	$(CC)	-c -o $@ school.c
