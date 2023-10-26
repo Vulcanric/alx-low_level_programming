@@ -2,11 +2,9 @@
 #  Builds an executable: `school`
 
 CC = gcc
-SRC = 
+SRC =  
 OBJ = main.o school.o
 NAME = school
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
