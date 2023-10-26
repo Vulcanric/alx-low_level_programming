@@ -1,0 +1,11 @@
+#  -*- Makefile -*-
+#  Builds an executable: `school`
+
+CC=gcc
+SRC=main.c school.c
+
+all: school
+
+school: $(SRC)
+	$(CC) $(SRC) -o $@
+main.c:
