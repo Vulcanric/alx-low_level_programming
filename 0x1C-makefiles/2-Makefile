@@ -1,14 +1,13 @@
 #  -*- Makefile -*-
-#  Builds an executable: `school`
+#  Builds an executable
 
 CC = gcc		# Compiler to use
 SRC = main.c school.c	# Source files to compile
 OBJ = $(SRC:.c=.o)	# Generate object file names from SRC using pattern substitution
 NAME = school		# Name of the executable
 
+#----------------------
 # Rules for building
-# Recompiles only when needed (only updated source files)
-#
-
-all: $(OBJ)	# Compiles object files into executable
+#----------------------
+all: $(OBJ)
 	$(CC) $^ -o $(NAME)
