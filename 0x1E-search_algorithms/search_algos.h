@@ -2,6 +2,7 @@
 #define SEARCH_ALGOS_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define NOT_FOUND -1
 
@@ -54,3 +55,5 @@ typedef struct skiplist_s
 
 /* Prototypes of skiplist_t */
 skiplist_t *linear_skip(skiplist_t *list, int value);
+
+#endif /* SEARCH_ALGOS_H */
