@@ -19,6 +19,6 @@ Search Algorithm is one which solves search problems, it is used to retrieve inf
 	- O(n!)
 	- etc...
 - Every file used a common header file,
-  [`search_algos.h`](https://github.com/Vulcanric/alx-low_level_programming/blob/master/0x1E-search_algorithms)
+  [`search_algos.h`](https://github.com/Vulcanric/alx-low_level_programming/blob/master/0x1E-search_algorithms/search_algos.h)
 
 ***Please note that every code in this project is compliant to the Betty linter.***
