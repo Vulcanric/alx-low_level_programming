@@ -5,6 +5,8 @@
 #include <stdlib.h>
 
 #define NOT_FOUND -1
+#define L_S size / 2
+#define R_S size - L_S
 
 /* Prototypes */
 int linear_search(int *array, size_t size, int value);
